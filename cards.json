@@ -1,0 +1,753 @@
+[
+  {
+    "card_id": "base-44",
+    "slug": "bulbasaur-base-set-44",
+    "name": "Bulbasaur",
+    "supertype": "Pokémon",
+    "subtypes": ["Basic"],
+    "hp": "40",
+    "types": ["Grass"],
+    "evolves_from": null,
+    "rules": [],
+    "attacks": [
+      {
+        "name": "Leech Seed",
+        "cost": ["Grass", "Grass"],
+        "damage": "20",
+        "text": "Unless all damage from this attack is prevented, you may remove 1 damage counter from Bulbasaur."
+      }
+    ],
+    "weaknesses": [{ "type": "Fire", "value": "×2" }],
+    "resistances": [],
+    "retreat_cost": 1,
+    "converted_retreat_cost": 1,
+    "gameplay_legality": {
+      "regulation_mark": null,
+      "formats": { "standard": "Not Legal", "expanded": "Not Legal", "unlimited": "Legal", "glc": "Legal" }
+    },
+    "set": {
+      "id": "base1",
+      "series": "Original Series",
+      "expansion_name": "Base Set",
+      "printed_total": 102,
+      "total_with_secret_rares": 102,
+      "ptcgo_code": "BS",
+      "release_date": "1999-01-09",
+      "collector_number": "44/102",
+      "symbol_url": null,
+      "logo_url": "https://images.pokemontcg.io/base1/logo.png"
+    },
+    "attributes": {
+      "rarity": "Common",
+      "rarity_symbol": "Circle",
+      "illustrator": "Mitsuhiro Arita",
+      "language": "en-US",
+      "is_secret_rare": false,
+      "is_promo": false,
+      "is_first_edition": false,
+      "print_finish": {
+        "finish_type": "Regular Non-Holo",
+        "texture": null,
+        "stamp": null
+      }
+    },
+    "media": {
+      "images": {
+        "thumbnail": "https://images.pokemontcg.io/base1/44.png",
+        "high_res": "https://images.pokemontcg.io/base1/44_hires.png",
+        "card_back": "https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/back.png",
+        "art_crop": "https://images.pokemontcg.io/base1/44_art.png"
+      },
+      "render_effects": {
+        "foil_effect_mask_url": null,
+        "3d_model_gltf_url": null,
+        "video_preview_url": null
+      }
+    },
+    "urls": {
+      "bulbapedia": "https://bulbapedia.bulbagarden.net/wiki/Bulbasaur_(Base_Set_44)",
+      "official_pokemon": "https://www.pokemon.com/us/pokemon-tcg/pokemon-cards/series/base1/44/",
+      "tcgplayer": "https://www.tcgplayer.com/product/42342/pokemon-base-set-bulbasaur",
+      "pricecharting": "https://www.pricecharting.com/game/pokemon-base-set/bulbasaur-44",
+      "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Singles/Base-Set/Bulbasaur"
+    },
+    "external_identifiers": {
+      "tcgplayer_product_id": "42342",
+      "cardmarket_product_id": "1231",
+      "pokemontcgio_id": "base1-44",
+      "barcode_ean": null
+    },
+    "pricing": {
+      "currency": "USD",
+      "last_synced_at": "2026-10-05T00:00:00Z",
+      "raw_ungraded": {
+        "market": 1.50,
+        "low": 0.50,
+        "mid": 1.50,
+        "high": 3.50,
+        "direct_low": 1.25,
+        "near_mint": 2.00,
+        "lightly_played": 1.25,
+        "moderately_played": 0.85,
+        "heavily_played": 0.50,
+        "damaged": 0.25
+      },
+      "graded": {
+        "psa": {
+          "psa_1": null,
+          "psa_2": null,
+          "psa_3": null,
+          "psa_4": null,
+          "psa_5": null,
+          "psa_6": null,
+          "psa_7": 12.00,
+          "psa_8": 18.00,
+          "psa_9": 35.00,
+          "psa_10": 175.00
+        },
+        "bgs": {
+          "bgs_7": null,
+          "bgs_8": 15.00,
+          "bgs_8_5": 17.50,
+          "bgs_9": 28.00,
+          "bgs_9_5_gem_mint": 65.00,
+          "bgs_10_pristine": 210.00,
+          "bgs_10_black_label": null
+        },
+        "cgc": {
+          "cgc_8": 14.00,
+          "cgc_8_5": 16.00,
+          "cgc_9": 24.00,
+          "cgc_9_5": 40.00,
+          "cgc_10_gem_mint": 70.00,
+          "cgc_10_pristine": 160.00
+        }
+      },
+      "population_reports": {
+        "psa": { "total_graded": 12540, "gem_mint_10": 1820 },
+        "bgs": { "total_graded": 1340, "pristine_10": 42, "black_label_10": 0 },
+        "cgc": { "total_graded": 980, "pristine_10": 38 }
+      },
+      "sources": ["PriceCharting", "TCGPlayer", "eBay Completed Sales"]
+    },
+    "inventory_and_vault": {
+      "is_in_collection": true,
+      "quantity_owned": 1,
+      "condition": "Raw - Lightly Played",
+      "grading_details": null,
+      "acquisition": {
+        "purchase_price": null,
+        "currency": "USD",
+        "acquired_date": null,
+        "vendor": "Collection Binder",
+        "notes": "Binder placement image 1"
+      }
+    }
+  },
+  {
+    "card_id": "gym1-81",
+    "slug": "lt-surges-rattata-gym-heroes-81",
+    "name": "Lt. Surge's Rattata",
+    "supertype": "Pokémon",
+    "subtypes": ["Basic"],
+    "hp": "40",
+    "types": ["Colorless"],
+    "evolves_from": null,
+    "rules": [],
+    "attacks": [
+      {
+        "name": "Focus Energy",
+        "cost": ["Colorless"],
+        "damage": "",
+        "text": "During your next turn, Lt. Surge's Rattata's Gnaw attack's base damage is doubled."
+      },
+      {
+        "name": "Gnaw",
+        "cost": ["Colorless", "Colorless"],
+        "damage": "20",
+        "text": ""
+      }
+    ],
+    "weaknesses": [{ "type": "Fighting", "value": "×2" }],
+    "resistances": [{ "type": "Psychic", "value": "-30" }],
+    "retreat_cost": 1,
+    "converted_retreat_cost": 1,
+    "gameplay_legality": {
+      "regulation_mark": null,
+      "formats": { "standard": "Not Legal", "expanded": "Not Legal", "unlimited": "Legal", "glc": "Legal" }
+    },
+    "set": {
+      "id": "gym1",
+      "series": "Gym",
+      "expansion_name": "Gym Heroes",
+      "printed_total": 132,
+      "total_with_secret_rares": 132,
+      "ptcgo_code": "G1",
+      "release_date": "2000-08-14",
+      "collector_number": "81/132",
+      "symbol_url": "https://images.pokemontcg.io/gym1/symbol.png",
+      "logo_url": "https://images.pokemontcg.io/gym1/logo.png"
+    },
+    "attributes": {
+      "rarity": "Common",
+      "rarity_symbol": "Circle",
+      "illustrator": "Ken Sugimori",
+      "language": "en-US",
+      "is_secret_rare": false,
+      "is_promo": false,
+      "is_first_edition": false,
+      "print_finish": {
+        "finish_type": "Regular Non-Holo",
+        "texture": null,
+        "stamp": null
+      }
+    },
+    "media": {
+      "images": {
+        "thumbnail": "https://images.pokemontcg.io/gym1/81.png",
+        "high_res": "https://images.pokemontcg.io/gym1/81_hires.png",
+        "card_back": "https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/back.png",
+        "art_crop": "https://images.pokemontcg.io/gym1/81_art.png"
+      },
+      "render_effects": {
+        "foil_effect_mask_url": null,
+        "3d_model_gltf_url": null,
+        "video_preview_url": null
+      }
+    },
+    "urls": {
+      "bulbapedia": "https://bulbapedia.bulbagarden.net/wiki/Lt._Surge%27s_Rattata_(Gym_Heroes_81)",
+      "official_pokemon": "https://www.pokemon.com/us/pokemon-tcg/pokemon-cards/series/gym1/81/",
+      "tcgplayer": "https://www.tcgplayer.com/product/86906/pokemon-gym-heroes-lt-surges-rattata",
+      "pricecharting": "https://www.pricecharting.com/game/pokemon-gym-heroes/lt-surges-rattata-81",
+      "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Singles/Gym-Heroes/Lt-Surges-Rattata"
+    },
+    "external_identifiers": {
+      "tcgplayer_product_id": "86906",
+      "cardmarket_product_id": "1843",
+      "pokemontcgio_id": "gym1-81",
+      "barcode_ean": null
+    },
+    "pricing": {
+      "currency": "USD",
+      "last_synced_at": "2026-10-05T00:00:00Z",
+      "raw_ungraded": {
+        "market": 0.75,
+        "low": 0.25,
+        "mid": 0.75,
+        "high": 2.00,
+        "direct_low": 0.60,
+        "near_mint": 1.00,
+        "lightly_played": 0.65,
+        "moderately_played": 0.40,
+        "heavily_played": 0.25,
+        "damaged": 0.10
+      },
+      "graded": {
+        "psa": {
+          "psa_1": null,
+          "psa_2": null,
+          "psa_3": null,
+          "psa_4": null,
+          "psa_5": null,
+          "psa_6": null,
+          "psa_7": 10.00,
+          "psa_8": 14.00,
+          "psa_9": 22.00,
+          "psa_10": 70.00
+        },
+        "bgs": {
+          "bgs_7": null,
+          "bgs_8": 12.00,
+          "bgs_8_5": 14.00,
+          "bgs_9": 20.00,
+          "bgs_9_5_gem_mint": 45.00,
+          "bgs_10_pristine": 110.00,
+          "bgs_10_black_label": null
+        },
+        "cgc": {
+          "cgc_8": 10.00,
+          "cgc_8_5": 12.00,
+          "cgc_9": 18.00,
+          "cgc_9_5": 30.00,
+          "cgc_10_gem_mint": 55.00,
+          "cgc_10_pristine": 95.00
+        }
+      },
+      "population_reports": {
+        "psa": { "total_graded": 1240, "gem_mint_10": 340 },
+        "bgs": { "total_graded": 110, "pristine_10": 12, "black_label_10": 0 },
+        "cgc": { "total_graded": 95, "pristine_10": 9 }
+      },
+      "sources": ["PriceCharting", "TCGPlayer", "eBay Completed Sales"]
+    },
+    "inventory_and_vault": {
+      "is_in_collection": true,
+      "quantity_owned": 1,
+      "condition": "Raw - Near Mint",
+      "grading_details": null,
+      "acquisition": {
+        "purchase_price": null,
+        "currency": "USD",
+        "acquired_date": null,
+        "vendor": "Collection Binder",
+        "notes": "Original print Gym Heroes non-holo"
+      }
+    }
+  },
+  {
+    "card_id": "ex1-5",
+    "slug": "delcatty-ex-ruby-sapphire-5",
+    "name": "Delcatty",
+    "supertype": "Pokémon",
+    "subtypes": ["Stage 1"],
+    "hp": "70",
+    "types": ["Colorless"],
+    "evolves_from": "Skitty",
+    "rules": [],
+    "attacks": [
+      {
+        "name": "Energy Draw",
+        "cost": ["Poké-Power"],
+        "damage": "",
+        "text": "Once during your turn (before your attack), you may discard 1 Energy card from your hand. Then draw up to 3 cards from your deck. This power can't be used if Delcatty is affected by a Special Condition."
+      },
+      {
+        "name": "Max Energy Source",
+        "cost": ["Colorless"],
+        "damage": "10×",
+        "text": "Does 10 damage times the amount of Energy attached to all of your Active Pokémon."
+      }
+    ],
+    "weaknesses": [{ "type": "Fighting", "value": "×2" }],
+    "resistances": [],
+    "retreat_cost": 1,
+    "converted_retreat_cost": 1,
+    "gameplay_legality": {
+      "regulation_mark": null,
+      "formats": { "standard": "Not Legal", "expanded": "Not Legal", "unlimited": "Legal", "glc": "Legal" }
+    },
+    "set": {
+      "id": "ex1",
+      "series": "EX",
+      "expansion_name": "EX Ruby & Sapphire",
+      "printed_total": 109,
+      "total_with_secret_rares": 109,
+      "ptcgo_code": "RS",
+      "release_date": "2003-06-18",
+      "collector_number": "5/109",
+      "symbol_url": "https://images.pokemontcg.io/ex1/symbol.png",
+      "logo_url": "https://images.pokemontcg.io/ex1/logo.png"
+    },
+    "attributes": {
+      "rarity": "Rare Holo",
+      "rarity_symbol": "Star",
+      "illustrator": "Shin-ichi Yoshida",
+      "language": "en-US",
+      "is_secret_rare": false,
+      "is_promo": false,
+      "is_first_edition": false,
+      "print_finish": {
+        "finish_type": "Cosmos Holofoil",
+        "texture": null,
+        "stamp": null
+      }
+    },
+    "media": {
+      "images": {
+        "thumbnail": "https://images.pokemontcg.io/ex1/5.png",
+        "high_res": "https://images.pokemontcg.io/ex1/5_hires.png",
+        "card_back": "https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/back.png",
+        "art_crop": "https://images.pokemontcg.io/ex1/5_art.png"
+      },
+      "render_effects": {
+        "foil_effect_mask_url": null,
+        "3d_model_gltf_url": null,
+        "video_preview_url": null
+      }
+    },
+    "urls": {
+      "bulbapedia": "https://bulbapedia.bulbagarden.net/wiki/Delcatty_(EX_Ruby_%26_Sapphire_5)",
+      "official_pokemon": "https://www.pokemon.com/us/pokemon-tcg/pokemon-cards/series/ex1/5/",
+      "tcgplayer": "https://www.tcgplayer.com/product/84768/pokemon-ruby-and-sapphire-delcatty-5",
+      "pricecharting": "https://www.pricecharting.com/game/pokemon-ruby-&-sapphire/delcatty-5",
+      "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Singles/EX-Ruby-Sapphire/Delcatty-V1-EX15"
+    },
+    "external_identifiers": {
+      "tcgplayer_product_id": "84768",
+      "cardmarket_product_id": "14210",
+      "pokemontcgio_id": "ex1-5",
+      "barcode_ean": null
+    },
+    "pricing": {
+      "currency": "USD",
+      "last_synced_at": "2026-10-05T00:00:00Z",
+      "raw_ungraded": {
+        "market": 28.50,
+        "low": 12.00,
+        "mid": 28.00,
+        "high": 42.00,
+        "direct_low": 24.00,
+        "near_mint": 32.00,
+        "lightly_played": 19.50,
+        "moderately_played": 14.50,
+        "heavily_played": 9.50,
+        "damaged": 5.00
+      },
+      "graded": {
+        "psa": {
+          "psa_1": null,
+          "psa_2": null,
+          "psa_3": null,
+          "psa_4": null,
+          "psa_5": null,
+          "psa_6": null,
+          "psa_7": 20.50,
+          "psa_8": 38.00,
+          "psa_9": 75.00,
+          "psa_10": 260.00
+        },
+        "bgs": {
+          "bgs_7": null,
+          "bgs_8": 32.00,
+          "bgs_8_5": 36.00,
+          "bgs_9": 58.00,
+          "bgs_9_5_gem_mint": 130.00,
+          "bgs_10_pristine": 380.00,
+          "bgs_10_black_label": null
+        },
+        "cgc": {
+          "cgc_8": 30.00,
+          "cgc_8_5": 35.00,
+          "cgc_9": 52.00,
+          "cgc_9_5": 85.00,
+          "cgc_10_gem_mint": 160.00,
+          "cgc_10_pristine": 290.00
+        }
+      },
+      "population_reports": {
+        "psa": { "total_graded": 620, "gem_mint_10": 85 },
+        "bgs": { "total_graded": 64, "pristine_10": 4, "black_label_10": 0 },
+        "cgc": { "total_graded": 42, "pristine_10": 2 }
+      },
+      "sources": ["PriceCharting", "TCGPlayer", "eBay Completed Sales"]
+    },
+    "inventory_and_vault": {
+      "is_in_collection": true,
+      "quantity_owned": 1,
+      "condition": "Raw - Near Mint",
+      "grading_details": null,
+      "acquisition": {
+        "purchase_price": null,
+        "currency": "USD",
+        "acquired_date": null,
+        "vendor": "Collection Binder",
+        "notes": "Vintage Holo with e-Reader border"
+      }
+    }
+  },
+  {
+    "card_id": "sm3-84",
+    "slug": "alolan-muk-gx-burning-shadows-84",
+    "name": "Alolan Muk-GX",
+    "supertype": "Pokémon",
+    "subtypes": ["Stage 1", "GX"],
+    "hp": "220",
+    "types": ["Darkness"],
+    "evolves_from": "Alolan Grimer",
+    "rules": [
+      "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
+    ],
+    "attacks": [
+      {
+        "name": "Chemical Breath",
+        "cost": ["Darkness", "Colorless", "Colorless"],
+        "damage": "10+",
+        "text": "This attack does 70 more damage for each Special Condition affecting your opponent's Active Pokémon."
+      },
+      {
+        "name": "Crunch",
+        "cost": ["Darkness", "Darkness", "Colorless", "Colorless"],
+        "damage": "120",
+        "text": "Discard an Energy from your opponent's Active Pokémon."
+      },
+      {
+        "name": "Tri-Hazard GX",
+        "cost": ["Colorless"],
+        "damage": "",
+        "text": "Switch 1 of your opponent's Benched Pokémon with their Active Pokémon. This attack does 60 damage to that Pokémon, and it is now Burned, Paralyzed, and Poisoned. (You can't use more than 1 GX attack in a game.)"
+      }
+    ],
+    "weaknesses": [{ "type": "Fighting", "value": "×2" }],
+    "resistances": [{ "type": "Psychic", "value": "-20" }],
+    "retreat_cost": 4,
+    "converted_retreat_cost": 4,
+    "gameplay_legality": {
+      "regulation_mark": null,
+      "formats": { "standard": "Not Legal", "expanded": "Legal", "unlimited": "Legal", "glc": "Not Legal" }
+    },
+    "set": {
+      "id": "sm3",
+      "series": "Sun & Moon",
+      "expansion_name": "Burning Shadows",
+      "printed_total": 147,
+      "total_with_secret_rares": 169,
+      "ptcgo_code": "BUS",
+      "release_date": "2017-08-04",
+      "collector_number": "84/147",
+      "symbol_url": "https://images.pokemontcg.io/sm3/symbol.png",
+      "logo_url": "https://images.pokemontcg.io/sm3/logo.png"
+    },
+    "attributes": {
+      "rarity": "Ultra Rare",
+      "rarity_symbol": "Double Star",
+      "illustrator": "5ban Graphics",
+      "language": "en-US",
+      "is_secret_rare": false,
+      "is_promo": false,
+      "is_first_edition": false,
+      "print_finish": {
+        "finish_type": "Regular Holofoil",
+        "texture": null,
+        "stamp": null
+      }
+    },
+    "media": {
+      "images": {
+        "thumbnail": "https://images.pokemontcg.io/sm3/84.png",
+        "high_res": "https://images.pokemontcg.io/sm3/84_hires.png",
+        "card_back": "https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/back.png",
+        "art_crop": "https://images.pokemontcg.io/sm3/84_art.png"
+      },
+      "render_effects": {
+        "foil_effect_mask_url": null,
+        "3d_model_gltf_url": null,
+        "video_preview_url": null
+      }
+    },
+    "urls": {
+      "bulbapedia": "https://bulbapedia.bulbagarden.net/wiki/Alolan_Muk-GX_(Burning_Shadows_84)",
+      "official_pokemon": "https://www.pokemon.com/us/pokemon-tcg/pokemon-cards/series/sm03/84/",
+      "tcgplayer": "https://www.tcgplayer.com/product/138541/pokemon-sm-burning-shadows-alolan-muk-gx",
+      "pricecharting": "https://www.pricecharting.com/game/pokemon-burning-shadows/alolan-muk-gx-84",
+      "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Singles/Burning-Shadows/Alolan-Muk-GX-V1-BUS84"
+    },
+    "external_identifiers": {
+      "tcgplayer_product_id": "138541",
+      "cardmarket_product_id": "298718",
+      "pokemontcgio_id": "sm3-84",
+      "barcode_ean": null
+    },
+    "pricing": {
+      "currency": "USD",
+      "last_synced_at": "2026-10-05T00:00:00Z",
+      "raw_ungraded": {
+        "market": 4.50,
+        "low": 2.50,
+        "mid": 4.50,
+        "high": 8.00,
+        "direct_low": 3.99,
+        "near_mint": 4.99,
+        "lightly_played": 3.50,
+        "moderately_played": 2.50,
+        "heavily_played": 1.50,
+        "damaged": 1.00
+      },
+      "graded": {
+        "psa": {
+          "psa_1": null,
+          "psa_2": null,
+          "psa_3": null,
+          "psa_4": null,
+          "psa_5": null,
+          "psa_6": null,
+          "psa_7": 12.00,
+          "psa_8": 17.50,
+          "psa_9": 24.00,
+          "psa_10": 65.00
+        },
+        "bgs": {
+          "bgs_7": null,
+          "bgs_8": 14.00,
+          "bgs_8_5": 16.00,
+          "bgs_9": 22.00,
+          "bgs_9_5_gem_mint": 45.00,
+          "bgs_10_pristine": 120.00,
+          "bgs_10_black_label": null
+        },
+        "cgc": {
+          "cgc_8": 12.00,
+          "cgc_8_5": 14.00,
+          "cgc_9": 20.00,
+          "cgc_9_5": 35.00,
+          "cgc_10_gem_mint": 55.00,
+          "cgc_10_pristine": 105.00
+        }
+      },
+      "population_reports": {
+        "psa": { "total_graded": 840, "gem_mint_10": 412 },
+        "bgs": { "total_graded": 45, "pristine_10": 5, "black_label_10": 0 },
+        "cgc": { "total_graded": 38, "pristine_10": 3 }
+      },
+      "sources": ["PriceCharting", "TCGPlayer", "eBay Completed Sales"]
+    },
+    "inventory_and_vault": {
+      "is_in_collection": true,
+      "quantity_owned": 1,
+      "condition": "Raw - Near Mint",
+      "grading_details": null,
+      "acquisition": {
+        "purchase_price": null,
+        "currency": "USD",
+        "acquired_date": null,
+        "vendor": "Collection Binder",
+        "notes": "Half art GX holofoil"
+      }
+    }
+  },
+  {
+    "card_id": "sm8-126",
+    "slug": "scizor-lost-thunder-126",
+    "name": "Scizor",
+    "supertype": "Pokémon",
+    "subtypes": ["Stage 1"],
+    "hp": "120",
+    "types": ["Metal"],
+    "evolves_from": "Scyther",
+    "rules": [],
+    "attacks": [
+      {
+        "name": "Special Blow",
+        "cost": ["Metal", "Colorless"],
+        "damage": "60+",
+        "text": "If your opponent's Active Pokémon has any Special Energy attached to it, this attack does 70 more damage."
+      }
+    ],
+    "weaknesses": [{ "type": "Fire", "value": "×2" }],
+    "resistances": [{ "type": "Psychic", "value": "-20" }],
+    "retreat_cost": 1,
+    "converted_retreat_cost": 1,
+    "gameplay_legality": {
+      "regulation_mark": "B",
+      "formats": { "standard": "Not Legal", "expanded": "Legal", "unlimited": "Legal", "glc": "Legal" }
+    },
+    "set": {
+      "id": "sm8",
+      "series": "Sun & Moon",
+      "expansion_name": "Lost Thunder",
+      "printed_total": 214,
+      "total_with_secret_rares": 236,
+      "ptcgo_code": "LOT",
+      "release_date": "2018-11-02",
+      "collector_number": "126/214",
+      "symbol_url": "https://images.pokemontcg.io/sm8/symbol.png",
+      "logo_url": "https://images.pokemontcg.io/sm8/logo.png"
+    },
+    "attributes": {
+      "rarity": "Rare Holo",
+      "rarity_symbol": "Star",
+      "illustrator": "Shin Nagasawa",
+      "language": "en-US",
+      "is_secret_rare": false,
+      "is_promo": false,
+      "is_first_edition": false,
+      "print_finish": {
+        "finish_type": "Horizontal Holofoil",
+        "texture": null,
+        "stamp": null
+      }
+    },
+    "media": {
+      "images": {
+        "thumbnail": "https://images.pokemontcg.io/sm8/126.png",
+        "high_res": "https://images.pokemontcg.io/sm8/126_hires.png",
+        "card_back": "https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/back.png",
+        "art_crop": "https://images.pokemontcg.io/sm8/126_art.png"
+      },
+      "render_effects": {
+        "foil_effect_mask_url": null,
+        "3d_model_gltf_url": null,
+        "video_preview_url": null
+      }
+    },
+    "urls": {
+      "bulbapedia": "https://bulbapedia.bulbagarden.net/wiki/Scizor_(Lost_Thunder_126)",
+      "official_pokemon": "https://www.pokemon.com/us/pokemon-tcg/pokemon-cards/series/sm08/126/",
+      "tcgplayer": "https://www.tcgplayer.com/product/179234/pokemon-sm-lost-thunder-scizor",
+      "pricecharting": "https://www.pricecharting.com/game/pokemon-lost-thunder/scizor-126",
+      "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Singles/Lost-Thunder/Scizor-V1-LOT126"
+    },
+    "external_identifiers": {
+      "tcgplayer_product_id": "179234",
+      "cardmarket_product_id": "364239",
+      "pokemontcgio_id": "sm8-126",
+      "barcode_ean": null
+    },
+    "pricing": {
+      "currency": "USD",
+      "last_synced_at": "2026-10-05T00:00:00Z",
+      "raw_ungraded": {
+        "market": 4.22,
+        "low": 1.50,
+        "mid": 4.00,
+        "high": 7.00,
+        "direct_low": 3.75,
+        "near_mint": 4.25,
+        "lightly_played": 3.00,
+        "moderately_played": 2.00,
+        "heavily_played": 1.20,
+        "damaged": 0.50
+      },
+      "graded": {
+        "psa": {
+          "psa_1": null,
+          "psa_2": null,
+          "psa_3": null,
+          "psa_4": null,
+          "psa_5": null,
+          "psa_6": null,
+          "psa_7": 14.00,
+          "psa_8": 18.00,
+          "psa_9": 24.50,
+          "psa_10": 55.00
+        },
+        "bgs": {
+          "bgs_7": null,
+          "bgs_8": 15.00,
+          "bgs_8_5": 17.50,
+          "bgs_9": 22.00,
+          "bgs_9_5_gem_mint": 40.00,
+          "bgs_10_pristine": 95.00,
+          "bgs_10_black_label": null
+        },
+        "cgc": {
+          "cgc_8": 14.00,
+          "cgc_8_5": 16.00,
+          "cgc_9": 21.00,
+          "cgc_9_5": 32.00,
+          "cgc_10_gem_mint": 50.00,
+          "cgc_10_pristine": 85.00
+        }
+      },
+      "population_reports": {
+        "psa": { "total_graded": 420, "gem_mint_10": 190 },
+        "bgs": { "total_graded": 18, "pristine_10": 2, "black_label_10": 0 },
+        "cgc": { "total_graded": 15, "pristine_10": 1 }
+      },
+      "sources": ["PriceCharting", "TCGPlayer", "eBay Completed Sales"]
+    },
+    "inventory_and_vault": {
+      "is_in_collection": true,
+      "quantity_owned": 1,
+      "condition": "Raw - Near Mint",
+      "grading_details": null,
+      "acquisition": {
+        "purchase_price": null,
+        "currency": "USD",
+        "acquired_date": null,
+        "vendor": "Collection Binder",
+        "notes": "Red Exoskeleton ability with Special Blow attack"
+      }
+    }
+  }
+]
