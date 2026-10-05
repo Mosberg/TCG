@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon TCG Vault & Collection</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #090b10;
+      --card-bg: rgba(22, 27, 34, 0.7);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --card-border-hover: rgba(255, 215, 0, 0.4);
+      --accent: #ffd700;
+      --accent-glow: rgba(255, 215, 0, 0.25);
+      --text: #f0f6fc;
+      --text-muted: #8b949e;
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(244, 63, 94, 0.1) 0%, transparent 40%);
+      background-attachment: fixed;
+    }
+
+    /* Header & Metrics Dashboard */
+    header {
+      padding: 2.5rem 1.5rem 1.5rem;
+      max-width: 1300px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #ffffff 40%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(12px);
+      border-radius: var(--radius);
+      padding: 1.1rem;
+    }
+
+    .stat-card .label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .stat-card .value {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-top: 0.2rem;
+    }
+
+    /* Controls Bar */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1rem;
+      align-items: center;
+    }
+
+    .search-input, .select-filter {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      outline: none;
+      font-size: 0.9rem;
+      backdrop-filter: blur(8px);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .search-input {
+      flex: 1 1 260px;
+    }
+
+    .search-input:focus, .select-filter:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+
+    .select-filter option {
+      background: #161b22;
+      color: var(--text);
+    }
+
+    /* Card Grid */
+    main {
+      flex: 1;
+      max-width: 1300px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 1rem 1.5rem 4rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.8rem;
+    }
+
+    /* Card Container & 3D Foil Effect */
+    .card-shell {
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .card-inner {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.15s ease-out, border-color 0.2s, box-shadow 0.2s;
+      transform-style: preserve-3d;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-shell:hover .card-inner {
+      border-color: var(--card-border-hover);
+      box-shadow: 0 15px 35px var(--accent-glow);
+    }
+
+    /* Holofoil shine overlay */
+    .holo-glare {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-radius: var(--radius);
+      opacity: 0;
+      mix-blend-mode: color-dodge;
+      background: linear-gradient(
+        105deg,
+        transparent 20%,
+        rgba(255, 255, 255, 0.4) 35%,
+        rgba(255, 0, 128, 0.3) 45%,
+        rgba(0, 200, 255, 0.3) 55%,
+        transparent 70%
+      );
+      transition: opacity 0.2s ease;
+    }
+
+    .card-shell:hover .holo-glare {
+      opacity: 1;
+    }
+
+    .card-img-wrap {
+      width: 100%;
+      aspect-ratio: 2.5 / 3.5;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #11141a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.9rem;
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.2s ease;
+    }
+
+    .card-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .card-set-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .card-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.5rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .rarity-pill {
+      font-size: 0.72rem;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 0.25rem 0.6rem;
+      border-radius: 20px;
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+
+    .price-tag {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    /* Modal / Drawer */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 1.5rem;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-body {
+      background: #11141a;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      max-width: 850px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 2rem;
+      padding: 2rem;
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .modal-body {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem;
+      margin: 1rem 0;
+    }
+
+    .price-box {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 0.6rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .price-box .tier {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .price-box .val {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #38ef7d;
+    }
+
+    .external-links a {
+      display: inline-block;
+      margin-right: 0.5rem;
+      margin-top: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.8rem;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      text-decoration: none;
+      border-radius: 6px;
+      border: 1px solid var(--card-border);
+      transition: background 0.2s;
+    }
+
+    .external-links a:hover {
+      background: var(--accent);
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 class="hero-title">Pokémon TCG Vault</h1>
+    <p class="hero-desc">Interactive portfolio and live pricing database rendered directly from cards.json</p>
+    
+    <div class="stats-bar">
+      <div class="stat-card">
+        <div class="label">Total Cards</div>
+        <div class="value" id="stat-total-cards">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Raw Market Value</div>
+        <div class="value" id="stat-total-raw">$0.00</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">PSA 10 Vault Value</div>
+        <div class="value" id="stat-total-psa10">$0.00</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <input type="text" id="search-input" class="search-input" placeholder="Search by Pokémon name, set, or ID...">
+      
+      <select id="set-filter" class="select-filter">
+        <option value="">All Expansions</option>
+      </select>
+
+      <select id="supertype-filter" class="select-filter">
+        <option value="">All Types</option>
+      </select>
+
+      <select id="sort-select" class="select-filter">
+        <option value="raw-desc">Price: High to Low</option>
+        <option value="raw-asc">Price: Low to High</option>
+        <option value="name-asc">Name: A-Z</option>
+        <option value="num-asc">Collector Number</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <div class="card-grid" id="card-grid"></div>
+  </main>
+
+  <!-- Detailed Inspector Modal -->
+  <div class="modal-backdrop" id="modal-backdrop">
+    <div class="modal-body" id="modal-body">
+      <button class="close-btn" id="modal-close">&times;</button>
+      <div class="modal-left">
+        <img id="modal-img" src="" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+      </div>
+      <div class="modal-right">
+        <h2 id="modal-name" style="font-size: 1.8rem; font-weight: 800; margin-bottom: 0.2rem;"></h2>
+        <p id="modal-set" style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;"></p>
+        
+        <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.4rem;">Market Valuation</h4>
+        <div class="price-grid" id="modal-prices"></div>
+
+        <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-top: 1rem; margin-bottom: 0.4rem;">External Market Links</h4>
+        <div class="external-links" id="modal-links"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let cardDatabase = [];
+
+    // Fallback demo dataset in case running locally via file:// without web server
+    const fallbackCards = [
+      {
+        "card_id": "sv1-199",
+        "name": "Miriam",
+        "supertype": "Trainer",
+        "set": { "expansion_name": "Scarlet & Violet Base", "collector_number": "199/198" },
+        "attributes": { "rarity": "Special Illustration Rare" },
+        "media": { "images": { "thumbnail": "https://images.pokemontcg.io/sv1/199.png", "high_res": "https://images.pokemontcg.io/sv1/199_hires.png" } },
+        "pricing": {
+          "raw_ungraded": { "market": 28.50 },
+          "graded": { "psa": { "psa_9": 38.00, "psa_10": 85.00 }, "bgs": { "bgs_10_black_label": 550.00 } }
+        },
+        "urls": { "tcgplayer": "https://tcgplayer.com", "pricecharting": "https://pricecharting.com" }
+      }
+    ];
+
+    async function init() {
+      try {
+        const response = await fetch('./cards.json');
+        if (!response.ok) throw new Error();
+        cardDatabase = await response.json();
+      } catch (e) {
+        console.warn('Could not fetch cards.json directly. Loaded fallback template data.');
+        cardDatabase = fallbackCards;
+      }
+
+      setupFilters();
+      updateMetrics();
+      renderCards();
+      setupEventListeners();
+    }
+
+    function setupFilters() {
+      const setSelect = document.getElementById('set-filter');
+      const supertypeSelect = document.getElementById('supertype-filter');
+
+      const sets = [...new Set(cardDatabase.map(c => c.set?.expansion_name).filter(Boolean))].sort();
+      const supertypes = [...new Set(cardDatabase.map(c => c.supertype).filter(Boolean))].sort();
+
+      sets.forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s;
+        opt.textContent = s;
+        setSelect.appendChild(opt);
+      });
+
+      supertypes.forEach(t => {
+        const opt = document.createElement('option');
+        opt.value = t;
+        opt.textContent = t;
+        supertypeSelect.appendChild(opt);
+      });
+    }
+
+    function updateMetrics() {
+      const totalCount = cardDatabase.length;
+      let totalRaw = 0;
+      let totalPSA10 = 0;
+
+      cardDatabase.forEach(c => {
+        totalRaw += (c.pricing?.raw_ungraded?.market || 0);
+        totalPSA10 += (c.pricing?.graded?.psa?.psa_10 || 0);
+      });
+
+      document.getElementById('stat-total-cards').textContent = totalCount.toLocaleString();
+      document.getElementById('stat-total-raw').textContent = `$${totalRaw.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+      document.getElementById('stat-total-psa10').textContent = `$${totalPSA10.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+    }
+
+    function renderCards() {
+      const grid = document.getElementById('card-grid');
+      grid.innerHTML = '';
+
+      const query = document.getElementById('search-input').value.toLowerCase();
+      const selectedSet = document.getElementById('set-filter').value;
+      const selectedSupertype = document.getElementById('supertype-filter').value;
+      const sortMode = document.getElementById('sort-select').value;
+
+      let filtered = cardDatabase.filter(c => {
+        const matchName = c.name?.toLowerCase().includes(query) || c.card_id?.toLowerCase().includes(query);
+        const matchSet = !selectedSet || c.set?.expansion_name === selectedSet;
+        const matchType = !selectedSupertype || c.supertype === selectedSupertype;
+        return matchName && matchSet && matchType;
+      });
+
+      filtered.sort((a, b) => {
+        if (sortMode === 'raw-desc') return (b.pricing?.raw_ungraded?.market || 0) - (a.pricing?.raw_ungraded?.market || 0);
+        if (sortMode === 'raw-asc') return (a.pricing?.raw_ungraded?.market || 0) - (b.pricing?.raw_ungraded?.market || 0);
+        if (sortMode === 'name-asc') return a.name.localeCompare(b.name);
+        if (sortMode === 'num-asc') return (a.set?.collector_number || '').localeCompare(b.set?.collector_number || '', undefined, {numeric: true});
+        return 0;
+      });
+
+      filtered.forEach(card => {
+        const rawPrice = card.pricing?.raw_ungraded?.market 
+          ? `$${card.pricing.raw_ungraded.market.toFixed(2)}` 
+          : 'N/A';
+
+        const thumb = card.media?.images?.thumbnail || card.media?.images?.high_res || '';
+        
+        const shell = document.createElement('div');
+        shell.className = 'card-shell';
+        shell.innerHTML = `
+          <div class="card-inner">
+            <div class="holo-glare"></div>
+            <div class="card-img-wrap">
+              <img src="${thumb}" alt="${card.name}" loading="lazy" onerror="this.src='https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/back.png'">
+            </div>
+            <div class="card-info">
+              <div class="card-set-badge">${card.set?.expansion_name \vert{}\vert{} 'Promo'} #${card.set?.collector_number || ''}</div>
+              <div class="card-title">${card.name}</div>
+              <div class="card-meta-row">
+                <span class="rarity-pill">${card.attributes?.rarity || 'Common'}</span>
+                <span class="price-tag">${rawPrice}</span>
+              </div>
+            </div>
+          </div>
+        `;
+
+        // 3D Card Hover & Light Tilt Engine
+        const inner = shell.querySelector('.card-inner');
+        const glare = shell.querySelector('.holo-glare');
+
+        shell.addEventListener('mousemove', (e) => {
+          const rect = shell.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = ((y - centerY) / centerY) * -12;
+          const rotateY = ((x - centerX) / centerX) * 12;
+
+          inner.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+          glare.style.backgroundPosition = `${x * 2}\%${y * 2}%`;
+        });
+
+        shell.addEventListener('mouseleave', () => {
+          inner.style.transform = `rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        });
+
+        shell.addEventListener('click', () => openModal(card));
+        grid.appendChild(shell);
+      });
+    }
+
+    function openModal(card) {
+      document.getElementById('modal-img').src = card.media?.images?.high_res || card.media?.images?.thumbnail || '';
+      document.getElementById('modal-name').textContent = card.name;
+      document.getElementById('modal-set').textContent = `${card.set?.series || ''} • ${card.set?.expansion_name \vert{}\vert{} ''} (#${card.set?.collector_number || ''})`;
+
+      // Render Prices
+      const priceContainer = document.getElementById('modal-prices');
+      priceContainer.innerHTML = '';
+      
+      const priceMap = [
+        { label: 'Raw Market', val: card.pricing?.raw_ungraded?.market },
+        { label: 'PSA 9', val: card.pricing?.graded?.psa?.psa_9 },
+        { label: 'PSA 10', val: card.pricing?.graded?.psa?.psa_10 },
+        { label: 'BGS 9.5', val: card.pricing?.graded?.bgs?.bgs_9_5_gem_mint },
+        { label: 'BGS 10 BL', val: card.pricing?.graded?.bgs?.bgs_10_black_label },
+        { label: 'CGC 10', val: card.pricing?.graded?.cgc?.cgc_10_pristine }
+      ];
+
+      priceMap.forEach(item => {
+        if (item.val) {
+          const box = document.createElement('div');
+          box.className = 'price-box';
+          box.innerHTML = `<div class="tier">${item.label}</div><div class="val">$${item.val.toFixed(2)}</div>`;
+          priceContainer.appendChild(box);
+        }
+      });
+
+      // Render External Links
+      const linksContainer = document.getElementById('modal-links');
+      linksContainer.innerHTML = '';
+      if (card.urls) {
+        Object.entries(card.urls).forEach(([source, link]) => {
+          if (link) {
+            const a = document.createElement('a');
+            a.href = link;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.textContent = source.toUpperCase();
+            linksContainer.appendChild(a);
+          }
+        });
+      }
+
+      document.getElementById('modal-backdrop').classList.add('active');
+    }
+
+    function setupEventListeners() {
+      ['search-input', 'set-filter', 'supertype-filter', 'sort-select'].forEach(id => {
+        document.getElementById(id).addEventListener('input', renderCards);
+      });
+
+      document.getElementById('modal-close').addEventListener('click', () => {
+        document.getElementById('modal-backdrop').classList.remove('active');
+      });
+
+      document.getElementById('modal-backdrop').addEventListener('click', (e) => {
+        if (e.target.id === 'modal-backdrop') {
+          document.getElementById('modal-backdrop').classList.remove('active');
+        }
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+                                                                                                  </html>
+                                                                                                  
